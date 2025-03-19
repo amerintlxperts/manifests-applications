@@ -19,3 +19,9 @@ spec:
           image: ghcr.io/robinmordasiewicz/video:0.0.9
           ports:
             - containerPort: 8082
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8082
+            initialDelaySeconds: 5
+            periodSeconds: 10
