@@ -7,13 +7,11 @@ metadata:
   annotations: {
     fortiweb-ip: "10.0.0.4",
     fortiweb-login: "fortiweb-login-secret",
-    fortiweb-port: "8443",
+    fortiweb-port: "443",
     fortiweb-ctrl-log: "disable",
-    health-check-ctrl: "HLTHCK_HTTP",
     virtual-server-ip: "10.0.0.6",
     virtual-server-addr-type: "ipv4",
     virtual-server-interface: "port1",
-    server-policy-web-protection-profile: "Inline Standard Protection",
     server-policy-https-service: "HTTPS",
     server-policy-http-service: "HTTP",
     server-policy-syn-cookie: "enable",
@@ -21,8 +19,18 @@ metadata:
   }
 spec:
   ingressClassName: fwb-ingress-controller
+  tls:
+    - secretName: dvwa-tls
+      hosts:
+        - dvwa.40docs.com
+        - app1.40docs.com
+        - app2.40docs.com
+        - app3.40docs.com
+        - app4.40docs.com
+        - app5.40docs.com
+        - app6.40docs.com
   rules:
-    - host: dvwa.amerintlxperts.com
+    - host: dvwa.40docs.com
       http:
         paths:
           - path: /
@@ -31,4 +39,74 @@ spec:
               service:
                 name: dvwa
                 port:
-                  number: 4280
+                  number: 80
+    - host: app1.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
+    - host: app2.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
+    - host: app3.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
+    - host: app4.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
+    - host: app5.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
+    - host: app6.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
+    - host: app7.40docs.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dvwa
+                port:
+                  number: 80
