@@ -20,6 +20,8 @@ spec:
           env:
             - name: DB_SERVER
               value: mariadb
+            - name: DEFAULT_SECURITY_LEVEL
+              value: low
           resources:
             requests:
               cpu: 1m
@@ -28,14 +30,8 @@ spec:
               cpu: 1000m
               memory: 512Mi
           ports:
-            - containerPort: 4280
+            - containerPort: 80
               name: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 4280
-            initialDelaySeconds: 5
-            periodSeconds: 10
         - name: mariadb
           image: mariadb:latest
           env:

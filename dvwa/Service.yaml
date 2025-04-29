@@ -9,7 +9,7 @@ spec:
     - port: 3306
       targetPort: 3306
   selector:
-    app: dvwa-mariadb
+    app: dvwa
   type: ClusterIP
 ---
 apiVersion: v1
@@ -19,10 +19,13 @@ metadata:
   namespace: dvwa
   labels:
     app: dvwa
+  annotations: {
+    "health-check-ctrl": "HLTHCK_DVWA"
+  }
 spec:
   ports:
-    - port: 8081
-      targetPort: 8081
+    - port: 80
+      targetPort: 80
   selector:
-    app: dvwa-mariadb
+    app: dvwa
   type: NodePort
