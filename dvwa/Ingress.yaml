@@ -22,15 +22,15 @@ spec:
   tls:
     - secretName: dvwa-tls
       hosts:
-        - dvwa.40docs.com
-        - app1.40docs.com
-        - app2.40docs.com
-        - app3.40docs.com
-        - app4.40docs.com
-        - app5.40docs.com
-        - app6.40docs.com
+        - dvwa.amerintlxperts.com
+        - app1.amerintlxperts.com
+        - app2.amerintlxperts.com
+        - app3.amerintlxperts.com
+        - app4.amerintlxperts.com
+        - app5.amerintlxperts.com
+        - app6.amerintlxperts.com
   rules:
-    - host: dvwa.40docs.com
+    - host: dvwa.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -40,7 +40,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app1.40docs.com
+    - host: app1.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -50,7 +50,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app2.40docs.com
+    - host: app2.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -60,7 +60,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app3.40docs.com
+    - host: app3.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -70,7 +70,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app4.40docs.com
+    - host: app4.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -80,7 +80,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app5.40docs.com
+    - host: app5.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -90,7 +90,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app6.40docs.com
+    - host: app6.amerintlxperts.com
       http:
         paths:
           - path: /
@@ -100,7 +100,7 @@ spec:
                 name: dvwa
                 port:
                   number: 80
-    - host: app7.40docs.com
+    - host: app7.amerintlxperts.com
       http:
         paths:
           - path: /
