@@ -21,7 +21,7 @@ data:
       # Security headers
       add_header X-Content-Type-Options nosniff;
 
-      # Allow unrestricted access to all paths except /ot, /cloud, /sase, /secops
+      # Allow unrestricted access to all paths except /ot, /cloud, /sase, /secops, /lanedge
       location / {
         # Security headers
         add_header X-Content-Type-Options nosniff;
@@ -36,7 +36,7 @@ data:
       }
 
       # Authentication for specific paths
-      location ~ ^/(sase|ot|cloud|secops)(.*) {
+      location ~ ^/(sase|ot|cloud|secops|lanedge)(.*) {
         auth_basic "Restricted";
         auth_basic_user_file /etc/nginx/.htpasswd;
         proxy_set_header Authorization $http_authorization;
